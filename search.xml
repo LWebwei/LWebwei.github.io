@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[我的第一篇博客]]></title>
-    <url>%2F2017%2F04%2F26%2Fmy-new-post%2F</url>
-    <content type="text"><![CDATA[激动地心情搭好了博客 试试可以不！]]></content>
+    <title><![CDATA[搭建博客有感]]></title>
+    <url>%2F2017%2F04%2F29%2Fmy-new-post%2F</url>
+    <content type="text"><![CDATA[首先要感谢这两篇文章，一个是hexo+GitHub 搭建博客教程，一个是hexo next主题的配置。 文章链接1：http://opiece.me/2015/04/09/hexo-guide/ 文章链接2；http://blog.csdn.net/zuoziji416/article/details/53204478 我主要说一下在搭建博客的时候遇到的问题。 首先那个命令 hexo d ，这个蜜汁命令输进去没有反应，开始我以为是网卡，然后后来一直 没有结果，到后来的时候百度问题，发现有个人说要先设置git身份信息 &gt; $ git config --global user.name &quot;你的用户名&quot; &gt; $ git config --global user.email &quot;你的邮箱&quot; 然后这样发布博客或者更改配置的时候 hexo d 就可以了。 然后就是next 主题设置，由于多说评论今年6月1号的时候就要关停服务了，所以没有再加入评论 功能。然后上面教程是用的百度站长统计访问量，我发现用这个更加简洁方便一点 LeanCloud。 这个可以搜一下教程。 然后就基本没有什么了。那两个教程基本也都有了。 有一个大坑！尽量不要用 hexo clean ！尽量不要用 hexo clean ！尽量不要用 hexo clean ！ 重要的话说三次，每次一用这个，hexo d 就失效，就得按上面 重新设置身份信息。 蒽，总算搭好了自己的博客，感觉还不错！]]></content>
       <categories>
         <category>搭博客</category>
       </categories>
