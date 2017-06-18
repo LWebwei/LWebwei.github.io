@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[codeforces#264总结]]></title>
+    <title><![CDATA[矩阵乘法]]></title>
     <url>%2F2017%2F06%2F18%2Facm%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[矩阵乘法： 123456789101112131415/* 假设 A 是 m*p 的矩阵 , B 是 p*n 的矩阵 记 C = AB (C 是 矩阵 A与B的乘积) 那么 C 是 m*n 的矩阵 */ for (int i = 1;i &lt;= m;++i)//A的行 &#123; for (int j = 1;j &lt;= n;++j)//B的列 &#123; for (int k = 1;k &lt;= p;++k)//通过公式求C &#123; C[i][j] += A[i][k]*B[k][j]; &#125; &#125; &#125;]]></content>
       <categories>
