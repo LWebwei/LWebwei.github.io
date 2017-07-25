@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[最长递增子序列]]></title>
+    <url>%2F2017%2F07%2F25%2F%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[最长递增子序列： 12345678910111213141516171819202122#define inf 0x3f3f3f3fint num[50000+11];int num2[50000+11];int main()&#123; int n; scanf(&quot;%d&quot;,&amp;n); fill(num2,num2+n+10,inf); num2[0]=-inf; for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;num[i]); int ans=1; for(int i=1;i&lt;=n;++i) &#123; int pos=upper_bound(num2,num2+n+10,num[i])-num2; num2[pos]=num[i]; if(pos&gt;ans) ans=pos; &#125; printf(&quot;%d\n&quot;,ans); return 0;&#125;]]></content>
+      <categories>
+        <category>acm模板</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[矩阵快速幂]]></title>
     <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
     <content type="text"><![CDATA[矩阵快速幂： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
