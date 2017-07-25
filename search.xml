@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[矩阵快速幂]]></title>
     <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
-    <content type="text"><![CDATA[矩阵乘法： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
+    <content type="text"><![CDATA[矩阵快速幂： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
       <categories>
         <category>acm模板</category>
       </categories>
