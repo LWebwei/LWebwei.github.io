@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[矩阵快速幂]]></title>
+    <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
+    <content type="text"><![CDATA[矩阵乘法： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
+      <categories>
+        <category>acm模板</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[矩阵乘法]]></title>
-    <url>%2F2017%2F06%2F18%2Facm%E6%A8%A1%E6%9D%BF%2F</url>
+    <url>%2F2017%2F06%2F18%2F%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%2F</url>
     <content type="text"><![CDATA[矩阵乘法： 123456789101112131415/* 假设 A 是 m*p 的矩阵 , B 是 p*n 的矩阵 记 C = AB (C 是 矩阵 A与B的乘积) 那么 C 是 m*n 的矩阵 */ for (int i = 1;i &lt;= m;++i)//A的行 &#123; for (int j = 1;j &lt;= n;++j)//B的列 &#123; for (int k = 1;k &lt;= p;++k)//通过公式求C &#123; C[i][j] += A[i][k]*B[k][j]; &#125; &#125; &#125;]]></content>
       <categories>
         <category>acm模板</category>
