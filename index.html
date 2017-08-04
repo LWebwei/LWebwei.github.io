@@ -379,7 +379,7 @@
       
         
           
-            <p>最长递增子序列：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int C[33][33];</div><div class="line">void init()</div><div class="line">&#123;</div><div class="line">	C[0][0]=C[1][0]=C[1][1]=1;</div><div class="line">	for(int i=2;i&lt;33;i++)&#123;</div><div class="line">		C[i][0]=1;</div><div class="line">		for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];</div><div class="line">		C[i][i]=1;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p>组合数打表：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int C[33][33];</div><div class="line">void init()</div><div class="line">&#123;</div><div class="line">	C[0][0]=C[1][0]=C[1][1]=1;</div><div class="line">	for(int i=2;i&lt;33;i++)&#123;</div><div class="line">		C[i][0]=1;</div><div class="line">		for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];</div><div class="line">		C[i][i]=1;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
           
         

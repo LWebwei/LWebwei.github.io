@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[组合数模板]]></title>
     <url>%2F2017%2F08%2F04%2F%E7%BB%84%E5%90%88%E6%95%B0%E6%A8%A1%E6%9D%BF%2F</url>
-    <content type="text"><![CDATA[最长递增子序列： 12345678910int C[33][33];void init()&#123; C[0][0]=C[1][0]=C[1][1]=1; for(int i=2;i&lt;33;i++)&#123; C[i][0]=1; for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j]; C[i][i]=1; &#125;&#125;]]></content>
+    <content type="text"><![CDATA[组合数打表： 12345678910int C[33][33];void init()&#123; C[0][0]=C[1][0]=C[1][1]=1; for(int i=2;i&lt;33;i++)&#123; C[i][0]=1; for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j]; C[i][i]=1; &#125;&#125;]]></content>
       <categories>
         <category>acm模板</category>
       </categories>
