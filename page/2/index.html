@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数论," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,12 @@
 
 
 
-<meta name="description" content="组合数打表：    12345678910int C[33][33];void init()&amp;#123;	C[0][0]=C[1][0]=C[1][1]=1;	for(int i=2;i&amp;lt;33;i++)&amp;#123;		C[i][0]=1;		for(int j=1;j&amp;lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];		C[i][i]=1;	&amp;#125;&amp;">
-<meta name="keywords" content="数论">
-<meta property="og:type" content="article">
-<meta property="og:title" content="组合数模板">
-<meta property="og:url" content="http://yoursite.com/2017/08/04/组合数模板/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webwei  blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Webwei  blog">
-<meta property="og:description" content="组合数打表：    12345678910int C[33][33];void init()&amp;#123;	C[0][0]=C[1][0]=C[1][1]=1;	for(int i=2;i&amp;lt;33;i++)&amp;#123;		C[i][0]=1;		for(int j=1;j&amp;lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];		C[i][i]=1;	&amp;#125;&amp;">
-<meta property="og:updated_time" content="2017-08-04T11:12:43.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="组合数模板">
-<meta name="twitter:description" content="组合数打表：    12345678910int C[33][33];void init()&amp;#123;	C[0][0]=C[1][0]=C[1][1]=1;	for(int i=2;i&amp;lt;33;i++)&amp;#123;		C[i][0]=1;		for(int j=1;j&amp;lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];		C[i][i]=1;	&amp;#125;&amp;">
+<meta name="twitter:title" content="Webwei  blog">
 
 
 
@@ -128,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/04/组合数模板/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>组合数模板 | Webwei  blog</title>
+  <title>Webwei  blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +154,9 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,9 +259,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -273,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/组合数模板/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/my-new-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Webwei">
@@ -294,7 +291,10 @@
             
             
               
-                组合数模板
+                
+                <a class="post-title-link" href="/2017/04/29/my-new-post/" itemprop="url">
+                  搭建博客有感
+                </a>
               
             
           </h1>
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T19:10:43+08:00">
-                2017-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-29T20:43:50+08:00">
+                2017-04-29
               </time>
             
 
@@ -332,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm模板/" itemprop="url" rel="index">
-                    <span itemprop="name">acm模板</span>
+                  <a href="/categories/搭博客/" itemprop="url" rel="index">
+                    <span itemprop="name">搭博客</span>
                   </a>
                 </span>
 
@@ -349,7 +349,7 @@
 
           
           
-             <span id="/2017/08/04/组合数模板/" class="leancloud_visitors" data-flag-title="组合数模板">
+             <span id="/2017/04/29/my-new-post/" class="leancloud_visitors" data-flag-title="搭建博客有感">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,98 +377,54 @@
       
 
       
-        <p>组合数打表：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int C[33][33];</div><div class="line">void init()</div><div class="line">&#123;</div><div class="line">	C[0][0]=C[1][0]=C[1][1]=1;</div><div class="line">	for(int i=2;i&lt;33;i++)&#123;</div><div class="line">		C[i][0]=1;</div><div class="line">		for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j];</div><div class="line">		C[i][i]=1;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        
+          <p>首先要感谢这两篇文章，一个是hexo+GitHub 搭建博客教程，一个是hexo next主题的配置。<br>链接1：<a href="http://opiece.me/2015/04/09/hexo-guide/">http://opiece.me/2015/04/09/hexo-guide/</a><br>链接2：<a href="http://blog.csdn.net/zuoziji416/article/details/53204478">http://blog.csdn.net/zuoziji416/article/details/53204478</a></p>
+<p>我主要说一下在搭建博客的时候遇到的问题。<br>首先那个命令 hexo d,没有结果，到后来的时候百度问题，发现有个人说要先设置git身份信息<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ git config --global user.name &quot;你的用户名&quot;</div><div class="line">&gt; $ git config --global user.email &quot;你的邮箱&quot;</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/29/my-new-post/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
       
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>如果看了能吃肉，那给我留点喝酒钱</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/weixin.jpg" alt="Webwei WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/zhifubao.jpg" alt="Webwei Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/数论/" rel="tag"># 数论</a>
-          
-        </div>
+
+      
       
 
       
-        
-	  
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/04/素数筛选+分解因子/" rel="next" title="素数筛选+分解因子">
-                <i class="fa fa-chevron-left"></i> 素数筛选+分解因子
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/25/最长递增子序列/" rel="prev" title="最长递增子序列">
-                最长递增子序列 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -476,10 +432,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -709,10 +661,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
 
   
 

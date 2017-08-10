@@ -23,6 +23,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[素数筛选+分解因子]]></title>
+    <url>%2F2017%2F08%2F04%2F%E7%B4%A0%E6%95%B0%E7%AD%9B%E9%80%89%2B%E5%88%86%E8%A7%A3%E5%9B%A0%E5%AD%90%2F</url>
+    <content type="text"><![CDATA[由易到难：lightoj1028-&gt;hdu6069 lightoj1028 : http://www.lightoj.com/volume_showproblem.PHP?problem=1028求一个数n，有多少种进制表示方法，使得末尾为0.我们首先要想到这个n转化为其他进制如果末尾是0的话，只需要n可以整除这个数，换言之就是求n这个数在2-n范围内的约数。如果n很小的话（n]]></content>
+      <categories>
+        <category>习题</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[组合数模板]]></title>
     <url>%2F2017%2F08%2F04%2F%E7%BB%84%E5%90%88%E6%95%B0%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[组合数打表： 12345678910int C[33][33];void init()&#123; C[0][0]=C[1][0]=C[1][1]=1; for(int i=2;i&lt;33;i++)&#123; C[i][0]=1; for(int j=1;j&lt;i;j++) C[i][j]=C[i-1][j-1] + C[i-1][j]; C[i][i]=1; &#125;&#125;]]></content>
@@ -45,17 +56,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[矩阵快速幂]]></title>
-    <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
-    <content type="text"><![CDATA[矩阵快速幂： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
-      <categories>
-        <category>acm模板</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[位运算技巧题]]></title>
     <url>%2F2017%2F07%2F25%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
     <content type="text"><![CDATA[异或： 题目链接：http://codeforces.com/contest/484/problem/A 题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。 解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即 为要照的答案；小于l则表示该为不能为0. 123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;#define ll long long using namespace std;ll n,l, r,ans;int main()&#123; while(cin&gt;&gt;n)&#123; for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;l&gt;&gt;r; ans=(1LL&lt;&lt;62)-1; for(int i=61;i&gt;=0;i--)&#123; if(r&gt;=ans&amp;&amp;ans&gt;=l) break; if((ans^(1LL&lt;&lt;i))&lt;l) continue; ans^=(1LL&lt;&lt;i); &#125; cout&lt;&lt;ans&lt;&lt;&apos;\n&apos;; &#125; &#125; return 0;&#125;]]></content>
@@ -64,6 +64,17 @@
       </categories>
       <tags>
         <tag>位运算操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[矩阵快速幂]]></title>
+    <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
+    <content type="text"><![CDATA[矩阵快速幂： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
+      <categories>
+        <category>acm模板</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
