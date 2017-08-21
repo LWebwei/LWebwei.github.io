@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[lightoj 数论专题]]></title>
+    <url>%2F2017%2F08%2F21%2Flightoj%E6%95%B0%E8%AE%BA%E4%B8%93%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1007: 题意：求[a,b]范围内所有整数的欧拉函数的平方和。欧拉函数：求不大于其本身的与其互质的数的个数。题解： 预处理，欧拉函数筛选下，之后保存前n项和,sum[n]。答案就是ans=sum[b]-sum[a-1]。(这个题就是一个欧拉函数打表模板题，掌握欧拉函数的打表是解决本题的关键) 1014： 题意：有C个人，给P个食物，每人吃Q个，剩L个。然后给你P和L(Q&gt;L)，让你求Q的可能情况，如果有多种可能，从小到大输出；如果不存在，输出impossible题解：这个题直接暴力分解因子就可以了，不解释 1028：题意：求一个数n，有多少种进制表示方法，使得末尾为0题解：这个题主要是一个想法，进制转化的时候，只有整除最后的那个一位才是0 。所以这个题就变成了一个n除以其范围以内的数，多少个数可以整除（除1外）这里用到一个知识点，就是任何一个数都可以拆分成质因子的幂次相乘的方式，x = p1^x1 p2^x2 p3^x3…其中pi是素数，xi为正整数.而最后约数个数就等于answer=（x1+1)(x2+1)(x3+1)*….. 本题最后减去1就好了，因为没有1进制 1035：题意：就是把一个数分解成质因子的幂次相乘就可以了题解：素数打表直接搞就可以了 1045：题意：求 n 的阶乘在 base 进制下的位数题解：这个首先联想一下十进制，log10（n）+ 1就是 n 的在十进制下的位数，由此可知 log base（n） 就是n在base 进制下的位数，再根据换底公式，log base（n） == log（n）/ log（base），这里让求的是阶乘，根据log的原理呢，就有log base （n！） == （ log（n） + log（n-1） + log（n-2） + 。。。。+ log（1）） / log（base）。用 sum 数组存一下 log（n！) 就可以快速的求出了。 1067：题意：求组合数C(n,m) ;题解：如果是在大概30范围以内的直接打表就可以了，但是这个题的范围是1e6，很明显不可以。下面来详细的说一下这个题，这题用到了逆元+Lucas先说一下 Lucas定理：C(n,m)%p=C(n/p,m/p)C(n%p,m%p)%p组合数 C（n,m） = n! / (m! (n - m)! ) 这里是除法，怎么变成乘法呢，这里用到了费马小定理 费马小定理a ^ (p-1) = 1 (%p)，两边同时除去a——a ^ (p-2) = a^-1 (%p)，得a的逆元a^-1 = a ^ (p-2)。（逆元其实就是a的倒数，在算法里面叫逆元）下面开始解这个题，首先看一下组合数的那个公式，不管怎么样都不可避免用这个公式，但是怎样进行除法取余呢 ，根据费马小定理就可以变成乘法，那个 1/(m! (n-m)!) 就可以看做（m! (n-m)!)^(p-2) ,p是题里给的取余的那个数，这里幂次用快速幂处理一下就好了。然后Lucas定理作为一个递归处理，每次把 C(n%p,m%p) 算出来，然后n,m不断递归除以p直到位0. 这样这个题就解出来了，贴一下代码吧 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556// &gt;File Name: 1067.cpp// &gt; Author: Webwei #include&lt;bits/stdc++.h&gt;#define ll long longusing namespace std; const ll mod = 1000003; ll PowerMod(ll a,ll b,ll c) &#123; ll ans = 1; while(b) &#123; if(b&amp;1) ans = (ans*a)%c; b=b/2; a=(a*a)%c; &#125; return ans; &#125; ll fac[1000005]; void get_fac(ll p)&#123; fac[0] = 1; for(int i = 1; i &lt;= p; i++) fac[i] = (fac[i-1]*i) % p;&#125; ll Lucas(ll n,ll m,ll p)&#123; ll tmp = 1; while(n &amp;&amp; m)&#123; ll a = n%p,b = m%p; if(a &lt; b) return 0; tmp = (tmp*fac[a]*PowerMod(fac[b]*fac[a-b]%p,p - 2, p)) % p; n/=p; m/=p; &#125; return tmp;&#125; int n,m; int main()&#123; get_fac(mod); int T; cin&gt;&gt;T; for(int t=1;t&lt;=T;t++)&#123; cin&gt;&gt;n&gt;&gt;m; int ans = Lucas(n,m,mod); cout&lt;&lt;&quot;Case &quot;&lt;&lt;t&lt;&lt;&quot;: &quot;&lt;&lt;ans&lt;&lt;&apos;\n&apos;; &#125; return 0;&#125; 1077:题意：给出一条线段的两个端点，求在这条线段上有多少个整数点题解：（这个题如果知道结论就是一个大水题i，不知道的话或许是np难题）一段线段(x1,y1)(x2,y2)上的整数点个数为gcd(abs(x2-x1),abs(y2-y1))+1 1090：题目大意：给出n,r,p,q四个数字1&lt;=n,r,p,q&lt;=1000000，求出C(n,r)(p^q)的末尾有几个0？解题思路： 先预处理打表搞出1e6以内数字末尾0的个数。然后对于C(n, r)中0的2的个数可以写成f[n]-f[r]-f[n-r]，其中f[i]表示i!中2的个数;5的个数同样也可以求出。p^q这个2的个数就是(f[p]-f[p-1])q; 最后取 2 和5 统计的总的最小值 1234567891011121314151617181920212223242526272829303132333435363738// &gt;File Name: 1090.cpp// &gt; Author: Webwei #include&lt;bits/stdc++.h&gt;using namespace std; const int maxn = 1e6+10;struct node&#123; int x , y;&#125;a[maxn]; int main()&#123; int t, n, r, p, q, l=1; int x=0,y=0; for(int i = 2; i&lt;maxn; i++)&#123; int num=i; while(num%2==0)&#123; x++; num/=2; &#125; num = i; while(num % 5 == 0)&#123; y++; num /=5; &#125; a[i].x = x; a[i].y = y; &#125; cin&gt;&gt;t; while(t--)&#123; cin&gt;&gt;n&gt;&gt;r&gt;&gt;p&gt;&gt;q; long long res = min(a[n].x-a[r].x-a[n-r].x+(a[p].x-a[p-1].x)*q,a[n].y-a[r].y-a[n-r].y+( a[p].y-a[p-1].y)*q); cout&lt;&lt;&quot;Case &quot;&lt;&lt;l++&lt;&lt;&quot;: &quot;&lt;&lt;res&lt;&lt;&apos;\n&apos;; &#125; return 0;&#125; 1098 ：题意：对于每个数求除1和本身的约数和，然后求前n个数的所有这种约数的和；题解：首先可以知道对于约数考虑就好了，对于1-n的约数，n/2-1(减1是因为2不算啊)就是约数为2出现过的次数 。如果n不是很大，那么直接sum就好了；但是这里n很大，所以搞sqrt(n)，对于&gt;sqrt(n)的约数，也就是对于q=n/i,比如n=100,n/7=12,很明显[10,12]所有的数都可以乘以7，而且满足&lt;=n，所以[10,12]都是前N个里面的约数；考虑不要重复，比如100的时候sqrt(100)=10，所以每次加上[sqrt(n)+1,n/i] 12345678910111213141516171819202122232425262728#include &lt;bits/stdc++.h&gt; using namespace std; typedef long long LL; int main() &#123; LL n; LL ans,m; int T,cas=1; scanf(&quot;%d&quot;,&amp;T); while(T--) &#123; LL q,p; scanf(&quot;%lld&quot;,&amp;n); ans=0; m=(LL)sqrt(n); for(LL i=2;i&lt;=m;i++) &#123; q=n/i; ans=ans+(q-1)*i; p=m+1; if(p&gt;q) continue; ans=ans+(q-p+1)*(q+p)/2; &#125; printf(&quot;Case %d: %lld\n&quot;,cas++,ans); &#125; return 0; &#125; 1109 :题意；求因子个数，按因子个数由小到大把对应的数输出，如果因子个数相同的话按大的数输出题解：水题，搞个结构体排序就好了。 1138：题意：给出一个数阶乘末尾0的个数，求这个数是多少题解：这个题直接二分查找这个数就好了，写二分的时候注意点细节就好 1163：题意：一个数A，如果A去掉它的最后一位就变成了B，给你一个A-B，求A；题解：由题意知道A-A/10=B，设A的最后一位数为x，所以说10A-((A/10)10+x)=B10-x，化简得9A=10B-x,所以说只需要枚举最后一位数x就行了，x范围为[0,9]。注意结果会爆longlong，所以用unsigned long long。]]></content>
+      <categories>
+        <category>习题</category>
+      </categories>
+      <tags>
+        <tag>数论 lightoj</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[欧拉函数模板]]></title>
     <url>%2F2017%2F08%2F08%2F%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[对正整数n，欧拉函数是小于n的正整数中与n互质的数的数目（φ(1)=1）欧拉函数打表： 1234567891011121314151617const int maxn=5e6+10;long long phi[maxn];void phi_table()&#123; memset(phi,0,sizeof(phi)); phi[1]=1; for(int i=2; i &lt;= maxn ; i++)&#123; if(!phi[i])&#123; for(int j=i;j&lt;maxn;j+=i)&#123; if(!phi[j]) phi[j]=j; phi[j]=phi[j]/i*(i-1); &#125; &#125; &#125; phi[0]=0;&#125;]]></content>
@@ -56,17 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[位运算技巧题]]></title>
-    <url>%2F2017%2F07%2F25%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
-    <content type="text"><![CDATA[异或： 题目链接：http://codeforces.com/contest/484/problem/A 题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。 解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即 为要照的答案；小于l则表示该为不能为0. 123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;#define ll long long using namespace std;ll n,l, r,ans;int main()&#123; while(cin&gt;&gt;n)&#123; for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;l&gt;&gt;r; ans=(1LL&lt;&lt;62)-1; for(int i=61;i&gt;=0;i--)&#123; if(r&gt;=ans&amp;&amp;ans&gt;=l) break; if((ans^(1LL&lt;&lt;i))&lt;l) continue; ans^=(1LL&lt;&lt;i); &#125; cout&lt;&lt;ans&lt;&lt;&apos;\n&apos;; &#125; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>位运算</category>
-      </categories>
-      <tags>
-        <tag>位运算操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[矩阵快速幂]]></title>
     <url>%2F2017%2F07%2F25%2F%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
     <content type="text"><![CDATA[矩阵快速幂： 123456789101112ll PowerMod(ll a,ll b) &#123; int ans=1; a=a%mod; while(b&gt;0) &#123; if(b%2==1) ans=(ans*a)%mod; b=b/2; a=(a*a)%mod; &#125; return ans; &#125;]]></content>
@@ -75,6 +75,17 @@
       </categories>
       <tags>
         <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[位运算技巧题]]></title>
+    <url>%2F2017%2F07%2F25%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[异或： 题目链接：http://codeforces.com/contest/484/problem/A 题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。 解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即 为要照的答案；小于l则表示该为不能为0. 123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;#define ll long long using namespace std;ll n,l, r,ans;int main()&#123; while(cin&gt;&gt;n)&#123; for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;l&gt;&gt;r; ans=(1LL&lt;&lt;62)-1; for(int i=61;i&gt;=0;i--)&#123; if(r&gt;=ans&amp;&amp;ans&gt;=l) break; if((ans^(1LL&lt;&lt;i))&lt;l) continue; ans^=(1LL&lt;&lt;i); &#125; cout&lt;&lt;ans&lt;&lt;&apos;\n&apos;; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>位运算</category>
+      </categories>
+      <tags>
+        <tag>位运算操作</tag>
       </tags>
   </entry>
   <entry>

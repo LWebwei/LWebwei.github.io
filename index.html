@@ -270,6 +270,162 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/lightoj数论专题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Webwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Webwei  blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/21/lightoj数论专题/" itemprop="url">
+                  lightoj 数论专题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T09:36:43+08:00">
+                2017-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/习题/" itemprop="url" rel="index">
+                    <span itemprop="name">习题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/21/lightoj数论专题/" class="leancloud_visitors" data-flag-title="lightoj 数论专题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>1007:    题意：求[a,b]范围内所有整数的欧拉函数的平方和。欧拉函数：求不大于其本身的与其互质的数的个数。<br>题解：  预处理，欧拉函数筛选下，之后保存前n项和,sum[n]。答案就是ans=sum[b]-sum[a-1]。<br>(这个题就是一个欧拉函数打表模板题，掌握欧拉函数的打表是解决本题的关键)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/21/lightoj数论专题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/欧拉函数模板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -530,12 +686,15 @@
 
       
         
-          
-            <p>大区间素数筛选：</p>
-<p>筛两次，第一次筛出1到1000000的素数，因为1000000^2已经超出int范围，这样的素数足够了。<br>函数getPrim()；   prime[ ] 存第一次筛出的素数，总个数为prime[0]<br>第二次利用已经筛出的素数去筛L,R之间的素数<br>函数getPrime2();     isprime[] 判断该数是否为素数 prime2[ ]筛出的素数有哪些，一共有prime2[0]个</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">const int maxn=1e6;</div><div class="line">int prime[maxn+10];</div><div class="line">int ans ;</div><div class="line">void getPrime()</div><div class="line">&#123;</div><div class="line">    memset(prime,0,sizeof(prime));//一开始prime都设为0代表都是素数（反向思考）</div><div class="line">    for(int i=2;i&lt;=maxn;i++)</div><div class="line">    &#123;</div><div class="line">        if(!prime[i])</div><div class="line">            prime[++prime[0]]=i;</div><div class="line">        for(int j=1;j&lt;=prime[0]&amp;&amp;prime[j]&lt;=maxn/i;j++)</div><div class="line">        &#123;</div><div class="line">            prime[prime[j]*i]=1;//prime[k]=1；k不是素数</div><div class="line">            if(i%prime[j]==0)</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">bool isprime[maxn+10];</div><div class="line">int prime2[maxn+10];</div><div class="line"></div><div class="line">int getPrime2(int L,int R)</div><div class="line">&#123;</div><div class="line">	ans = 0; </div><div class="line">    memset(isprime,1,sizeof(isprime));</div><div class="line">    //isprime[0]=isprime[1]=0;//这句话不能加，考虑到左区间为2的时候，加上这一句，素数2,3会被判成合数</div><div class="line">    if(L&lt;2) L=2;</div><div class="line">    for(int i=1;i&lt;=prime[0]&amp;&amp;(long long)prime[i]*prime[i]&lt;=R;i++)</div><div class="line">    &#123;</div><div class="line">        int s=L/prime[i]+(L%prime[i]&gt;0);//计算第一个比L大且能被prime[i]整除的数是prime[i]的几倍,从此处开始筛</div><div class="line">        if(s==1)//很特殊,如果从1开始筛的话，那么2会被筛成非素数</div><div class="line">            s=2;</div><div class="line">        for(int j=s;(long long)j*prime[i]&lt;=R;j++)</div><div class="line">            if((long long)j*prime[i]&gt;=L)</div><div class="line">            isprime[j*prime[i]-L]=false; //区间映射 </div><div class="line">    &#125;</div><div class="line">    prime2[0]=0;</div><div class="line">    for(int i=0;i&lt;=R-L;i++)&#123;</div><div class="line">        if(isprime[i])&#123;</div><div class="line">        	prime2[++prime2[0]]=i+L;</div><div class="line">        	ans++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre>
-          
+          <p>大区间素数筛选：</p>
+<p>筛两次，第一次筛出1到1000000的素数，因为1000000^2已经超出int范围，这样的素数足够了。<br>函数getPrim()；   prime[ ] 存第一次筛出的素数，总个数为prime[0]<br>第二次利用已经筛出的素数去筛L,R之间的素数<br>函数getPrime2();     isprime[] 判断该数是否为素数 prime2[ ]筛出的素数有哪些，一共有prime2[0]个<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/07/大区间素数筛选/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1040,6 +1199,158 @@ answer=(x1+1)∗(x2+1)∗...−1
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/矩阵快速幂/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Webwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Webwei  blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/25/矩阵快速幂/" itemprop="url">
+                  矩阵快速幂
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T10:12:43+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm模板/" itemprop="url" rel="index">
+                    <span itemprop="name">acm模板</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/25/矩阵快速幂/" class="leancloud_visitors" data-flag-title="矩阵快速幂">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>矩阵快速幂：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ll PowerMod(ll a,ll b)  </div><div class="line">&#123;  </div><div class="line">    int ans=1;  </div><div class="line">    a=a%mod;  </div><div class="line">    while(b&gt;0)  </div><div class="line">    &#123;  </div><div class="line">        if(b%2==1)  ans=(ans*a)%mod;  </div><div class="line">        b=b/2;  </div><div class="line">        a=(a*a)%mod;  </div><div class="line">    &#125;  </div><div class="line">    return ans;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/位运算/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1151,158 +1462,6 @@ answer=(x1+1)∗(x2+1)∗...−1
           
             <p>异或：<br>    题目链接：<a href="http://codeforces.com/contest/484/problem/A" target="_blank" rel="external">http://codeforces.com/contest/484/problem/A</a><br>  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。</p>
 <p>  解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即<br>  为要照的答案；小于l则表示该为不能为0.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long  </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">ll n,l, r,ans;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(cin&gt;&gt;n)&#123;</div><div class="line">		for(int i=0;i&lt;n;i++)&#123;</div><div class="line">			cin&gt;&gt;l&gt;&gt;r;</div><div class="line">			ans=(1LL&lt;&lt;62)-1;</div><div class="line">			for(int i=61;i&gt;=0;i--)&#123;</div><div class="line">			if(r&gt;=ans&amp;&amp;ans&gt;=l)		break;</div><div class="line">			if((ans^(1LL&lt;&lt;i))&lt;l)	continue;</div><div class="line">			ans^=(1LL&lt;&lt;i);</div><div class="line">		&#125;</div><div class="line">		cout&lt;&lt;ans&lt;&lt;&apos;\n&apos;;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/矩阵快速幂/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Webwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Webwei  blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/25/矩阵快速幂/" itemprop="url">
-                  矩阵快速幂
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T10:12:43+08:00">
-                2017-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm模板/" itemprop="url" rel="index">
-                    <span itemprop="name">acm模板</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/25/矩阵快速幂/" class="leancloud_visitors" data-flag-title="矩阵快速幂">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>矩阵快速幂：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ll PowerMod(ll a,ll b)  </div><div class="line">&#123;  </div><div class="line">    int ans=1;  </div><div class="line">    a=a%mod;  </div><div class="line">    while(b&gt;0)  </div><div class="line">    &#123;  </div><div class="line">        if(b%2==1)  ans=(ans*a)%mod;  </div><div class="line">        b=b/2;  </div><div class="line">        a=(a*a)%mod;  </div><div class="line">    &#125;  </div><div class="line">    return ans;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1644,163 +1803,6 @@ answer=(x1+1)∗(x2+1)∗...−1
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/水题优化（持续更新）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Webwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Webwei  blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/06/水题优化（持续更新）/" itemprop="url">
-                  水题优化（持续更新）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T23:03:13+08:00">
-                2017-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/优化/" itemprop="url" rel="index">
-                    <span itemprop="name">优化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/06/水题优化（持续更新）/" class="leancloud_visitors" data-flag-title="水题优化（持续更新）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>（这篇文章会持续不断的更新补题）<br>题目链接：<a href="http://codeforces.com/contest/496/problem/A">http://codeforces.com/contest/496/problem/A</a><br>题目大意 :  给出有 n 个数的序列，然后通过删除除了第一个数和最后一个数的任意一个位置的数，求出删除这个数之后序列的最大相邻差是多少，然后删除下一个数，继续求出最大相邻差，直到删到倒数第二个数，最后从这些最大相邻差中找出最小的那个输出。例如：有序列为1 2 3 7 8，删除第二个、第三个、第四个数后得到的序列分别为：(1, 3, 7, 8)， (1, 2, 7, 8)， (1, 2, 3, 8)。那么最大相邻差分别为 4,5,5，选出最小的那个就是答案 4 。</p>
-<p>这个题给的范围是n在100以内，所以可以直接暴力来搞，复杂度 O(n^2) ，这种做法应该都会。 但是如果n在1e5又该怎么办？<br>这里就说一下这个优化，就是统计相邻的最大的，和隔开的两个数的最小的，这两者取最大值就好了，算法复杂度为 2*O(n);从而达到了优化<br>代码如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int a[100010];	</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int n;</div><div class="line">	cin&gt;&gt;n;</div><div class="line">	int ans=0;</div><div class="line">	int temp=0x3f3f3f3f;</div><div class="line">	for(int i=1;i&lt;=n;i++)   cin&gt;&gt;a[i];</div><div class="line">	for(int i=1;i&lt;n;i++)    ans=max(ans,a[i+1]-a[i]);</div><div class="line">	for(int i=2;i&lt;n;i++)    temp=min(temp,a[i+1]-a[i-1]);</div><div class="line">	cout&lt;&lt;max(temp,ans)&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/06/水题优化（持续更新）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1850,7 +1852,7 @@ answer=(x1+1)∗(x2+1)∗...−1
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1872,7 +1874,7 @@ answer=(x1+1)∗(x2+1)∗...−1
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
