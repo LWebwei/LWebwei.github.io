@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="异或：    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    1234">
+<meta name="description" content="题目一:    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    12345678">
 <meta name="keywords" content="位运算操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="位运算技巧题">
 <meta property="og:url" content="http://yoursite.com/2017/07/25/位运算/index.html">
 <meta property="og:site_name" content="Webwei  blog">
-<meta property="og:description" content="异或：    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    1234">
-<meta property="og:updated_time" content="2017-07-31T12:49:48.401Z">
+<meta property="og:description" content="题目一:    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    12345678">
+<meta property="og:updated_time" content="2017-08-22T08:36:02.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算技巧题">
-<meta name="twitter:description" content="异或：    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    1234">
+<meta name="twitter:description" content="题目一:    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    12345678">
 
 
 
@@ -377,9 +377,20 @@
       
 
       
-        <p>异或：<br>    题目链接：<a href="http://codeforces.com/contest/484/problem/A" target="_blank" rel="external">http://codeforces.com/contest/484/problem/A</a><br>  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求x的bitcount尽量大的前提下数值尽量小。</p>
+        <p>题目一:    题目链接：<a href="http://codeforces.com/contest/484/problem/A" target="_blank" rel="external">http://codeforces.com/contest/484/problem/A</a><br>  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。</p>
 <p>  解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即<br>  为要照的答案；小于l则表示该为不能为0.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long  </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">ll n,l, r,ans;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(cin&gt;&gt;n)&#123;</div><div class="line">		for(int i=0;i&lt;n;i++)&#123;</div><div class="line">			cin&gt;&gt;l&gt;&gt;r;</div><div class="line">			ans=(1LL&lt;&lt;62)-1;</div><div class="line">			for(int i=61;i&gt;=0;i--)&#123;</div><div class="line">			if(r&gt;=ans&amp;&amp;ans&gt;=l)		break;</div><div class="line">			if((ans^(1LL&lt;&lt;i))&lt;l)	continue;</div><div class="line">			ans^=(1LL&lt;&lt;i);</div><div class="line">		&#125;</div><div class="line">		cout&lt;&lt;ans&lt;&lt;&apos;\n&apos;;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+<p>题目二：题目链接：<a href="http://www.lightoj.com/volume_showproblem.php?problem=1042" target="_blank" rel="external">http://www.lightoj.com/volume_showproblem.php?problem=1042</a><br>题目大意：对于输入的Ｎ，输出比Ｎ大的第一个二进制中１的个数相同的数。<br>分析：Ｎ最大可以去到1e9，所以可以知道，暴力一个个枚举是行不通的。题目要求输出二进制表示中１的位数相同的首个大于Ｎ的数，所以应该不难想到要用位运算去寻找答案。</p>
+<p>在《挑战程序设计竞赛》这本书中，在谈到集合的那一部分，有一个关于用位运算表示集合的专栏，里面的介绍就有本题解法的相关知识。</p>
+<p>我们可以知道，0101110之后的是0110011，0111110之后的是1001111。那么怎么通过位运算快速得得到我们想要的数呢。</p>
+<p>可以通过一下步骤：</p>
+<p>（１）求出最低位的1开始的连续的1的区间(0101110-&gt;0001110) </p>
+<p>（２）将这一区间全部变为0，并将区间左侧的那个0变为1(0101110-&gt;0110000)</p>
+<p>（３）将第（１）步里取出的区间右移，直到剩下的1的个数减少了1个(0001110-&gt;0000011)</p>
+<p>（４）将第（２）步和第（３）步的结果按位取或(0110000|0000011=0110011)<br>（以上思路就是最一般的方法，有点贪心的思想）<br>对于为零的整数，N&amp;(-N)的值就是将其最低位的1独立出来后的值。这是由于计算机中负数采用二进制补码表示，-Ｎ实际上对应于(～Ｎ)＋１(将Ｎ按位取反然后加上1)。</p>
+<p>将最低位的1取出后，设它为x。那么通过计算y=Ｎ+x，就将Ｎ从最低位的1开始的连续的1都置为0了。我们来比较一下~y和Ｎ。在N中加入x后没有变化的位，在~y中全部取相反的值。而最低位1开始的连续区间在~y中依然是1，区间左侧的那个0在~y中也依然是0。于是通过计算z=N&amp;~y就得到了最低位1开始的连续区间。比如如果N=0101110，则x=0000010，y=0110000，z=0001110。</p>
+<p>同时，y也恰好是第（２）步要求的值那么首先将z不断右移，知道最低位为1，这通过计算z/x即可完成。这样再将z/x右移1位就得到了第（３）要求的值。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int T,t = 1;</div><div class="line">	cin&gt;&gt;T;</div><div class="line">	while(T--)&#123;</div><div class="line">		int n,m,x,y;</div><div class="line">		cin&gt;&gt;n;</div><div class="line">		x = n &amp; (-n);</div><div class="line">		y = x + n;</div><div class="line">		m = (((~y)&amp;n)/x &gt;&gt; 1)|y;</div><div class="line">		cout&lt;&lt;&quot;Case &quot;&lt;&lt;t++&lt;&lt;&quot;: &quot;&lt;&lt;m&lt;&lt;endl;	</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
 
