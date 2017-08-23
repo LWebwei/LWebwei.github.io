@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/25/位运算/index.html">
 <meta property="og:site_name" content="Webwei  blog">
 <meta property="og:description" content="题目一:    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    12345678">
-<meta property="og:updated_time" content="2017-08-22T08:36:02.779Z">
+<meta property="og:updated_time" content="2017-08-23T02:40:42.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算技巧题">
 <meta name="twitter:description" content="题目一:    题目链接：http://codeforces.com/contest/484/problem/A  题目大意：给定区间l，r，找到一个数x，保证x在区间上，并且要求1的出现次数最多的前提下数值尽量小。   解题思路：默认x为全1的二进制数，每次从最高为判断，看最高位的1变为0后大于r，就将该为变成0；落在区间上则即  为要照的答案；小于l则表示该为不能为0.    12345678">
@@ -390,7 +390,8 @@
 <p>将最低位的1取出后，设它为x。那么通过计算y=Ｎ+x，就将Ｎ从最低位的1开始的连续的1都置为0了。我们来比较一下~y和Ｎ。在N中加入x后没有变化的位，在~y中全部取相反的值。而最低位1开始的连续区间在~y中依然是1，区间左侧的那个0在~y中也依然是0。于是通过计算z=N&amp;~y就得到了最低位1开始的连续区间。比如如果N=0101110，则x=0000010，y=0110000，z=0001110。</p>
 <p>同时，y也恰好是第（２）步要求的值那么首先将z不断右移，知道最低位为1，这通过计算z/x即可完成。这样再将z/x右移1位就得到了第（３）要求的值。</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int T,t = 1;</div><div class="line">	cin&gt;&gt;T;</div><div class="line">	while(T--)&#123;</div><div class="line">		int n,m,x,y;</div><div class="line">		cin&gt;&gt;n;</div><div class="line">		x = n &amp; (-n);</div><div class="line">		y = x + n;</div><div class="line">		m = (((~y)&amp;n)/x &gt;&gt; 1)|y;</div><div class="line">		cout&lt;&lt;&quot;Case &quot;&lt;&lt;t++&lt;&lt;&quot;: &quot;&lt;&lt;m&lt;&lt;endl;	</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre>
+</code></pre><p>技巧：  __builtin_popcount(n)计算n的二进制中多少个1</p>
+
       
     </div>
 
