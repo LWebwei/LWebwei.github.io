@@ -270,6 +270,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/模板/线段树模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Webwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Webwei  blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/10/模板/线段树模板/" itemprop="url">
+                  线段树（区间求和，区间修改，最值查询）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T20:54:13+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm模板/" itemprop="url" rel="index">
+                    <span itemprop="name">acm模板</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/10/模板/线段树模板/" class="leancloud_visitors" data-flag-title="线段树（区间求和，区间修改，最值查询）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">const int inf = 0x3f3f3f3f;</div><div class="line">const int maxn = 1e5 +10;</div><div class="line">int n, a[maxn], q;</div><div class="line"> </div><div class="line">struct node&#123;</div><div class="line">	int l,r;</div><div class="line">	ll sum,lazy;</div><div class="line">	ll mi, mx;</div><div class="line">	void update(ll x)&#123;</div><div class="line">		lazy += x;</div><div class="line">		sum += 1LL*(r-l+1)*x;</div><div class="line">		mi += x;</div><div class="line">		mx += x; </div><div class="line">	&#125;</div><div class="line">&#125;tree[maxn*4];</div><div class="line"></div><div class="line">void push_up(int x)&#123;</div><div class="line">	tree[x].sum = tree[x&lt;&lt;1].sum + tree[x&lt;&lt;1|1].sum;</div><div class="line">	tree[x].mi = min(tree[x&lt;&lt;1].mi,tree[x&lt;&lt;1|1].mi);</div><div class="line">	tree[x].mx = max(tree[x&lt;&lt;1].mx,tree[x&lt;&lt;1|1].mx);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void push_down(int x)&#123;</div><div class="line">	int lazyval = tree[x].lazy;</div><div class="line">	if(lazyval)&#123;</div><div class="line">		tree[x&lt;&lt;1].update(lazyval);</div><div class="line">		tree[x&lt;&lt;1|1].update(lazyval);</div><div class="line">		tree[x].lazy = 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void build(int x,int l,int r)&#123;	//x is root </div><div class="line">	tree[x].l = l, tree[x].r = r;</div><div class="line">	tree[x].sum = tree[x].lazy = 0;</div><div class="line">	tree[x].mi = inf; tree[x].mx = -inf;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tree[x].sum = a[l];</div><div class="line">		tree[x].mi = a[l];</div><div class="line">		tree[x].mx = a[l];</div><div class="line">	&#125;else &#123;</div><div class="line">		int mid = (l+r)/2;</div><div class="line">		build(x&lt;&lt;1,l,mid);</div><div class="line">		build(x&lt;&lt;1|1,mid+1,r);</div><div class="line">		push_up(x); </div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void update(int x,int l,int r,ll val)&#123;	//x is root </div><div class="line">	int L = tree[x].l, R = tree[x].r;</div><div class="line">	if(l&lt;=L &amp;&amp; R &lt;=r)&#123;</div><div class="line">		tree[x].update(val);</div><div class="line">	&#125;else&#123;</div><div class="line">		push_down(x);</div><div class="line">		int mid =(L+R)/2;</div><div class="line">		if(mid&gt;=l) update(x&lt;&lt;1,l,r,val);</div><div class="line">		if(r&gt;mid)	update(x&lt;&lt;1|1,l,r,val);</div><div class="line">		push_up(x);	</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">void query(int x,int l,int r, ll &amp;qsum, ll &amp;qmin, ll &amp;qmax)&#123;  //x is root </div><div class="line">	 int L = tree[x].l, R = tree[x].r;</div><div class="line">	if(l&lt;=L &amp;&amp; R &lt;=r)&#123;</div><div class="line">		//return tree[x].sum;</div><div class="line">		qsum = tree[x].sum;</div><div class="line">		qmin = tree[x].mi;</div><div class="line">		qmax = tree[x].mx;</div><div class="line">	&#125;else&#123;</div><div class="line">		push_down(x);</div><div class="line">		//ll ans = 0;</div><div class="line">		ll qlsum = 0, qrsum = 0;</div><div class="line">		ll qlmin = inf, qrmin = inf;</div><div class="line">		ll qlmax = -inf,qrmax = -inf;</div><div class="line">		int mid =(L+R)/2;</div><div class="line">		if(mid&gt;=l) query(x&lt;&lt;1,l,r,qlsum,qlmin,qlmax);</div><div class="line">		if(r&gt;mid)	query(x&lt;&lt;1|1,l,r,qrsum,qrmin,qrmax);</div><div class="line">		push_up(x);	</div><div class="line">		qsum += qlsum+qrsum;</div><div class="line">		qmin = min(qlmin,qrmin);</div><div class="line">		qmax = max(qlmax,qrmax);</div><div class="line">		//return ans;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	scanf(&quot;%d&quot;,&amp;n);</div><div class="line">	for(int i=1; i&lt;=n; i++)		scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">	build(1,1,n);</div><div class="line">	scanf(&quot;%d&quot;,&amp;q);</div><div class="line">	for(int i=1; i&lt;=q; i++)&#123;</div><div class="line">		int l, r, val;</div><div class="line">		scanf(&quot;%d%d%d&quot;,&amp;l,&amp;r,&amp;val);</div><div class="line">		update(1,l,r,val); </div><div class="line">		ll ans_sum = 0, ans_min = 0, ans_max = 0;</div><div class="line">		query(1,l,r,ans_sum,ans_min,ans_max);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_sum);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_min);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_max);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/模板/RMQ模板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -379,7 +532,7 @@
       
         
           
-            <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">template&lt;typename T&gt;</div><div class="line">class RMQ &#123;</div><div class="line"> public:</div><div class="line"> 	vector&lt;vector&lt;T&gt; &gt; dp; </div><div class="line">    RMQ() &#123;&#125;</div><div class="line">    RMQ(vector&lt;T&gt;&amp; a) &#123;</div><div class="line">    	int n = a.size();</div><div class="line">    	dp.resize(n);</div><div class="line">    	for(int i=0; i&lt;n; i++)	dp[i].resize(20);</div><div class="line">    	//for (auto&amp; i : dp) i.resize(20);</div><div class="line">    	for(int i=0; i&lt;n; i++) dp[i][0]=a[i];</div><div class="line">    	for(int j=1; (1&lt;&lt;j)&lt;=n; j++)</div><div class="line">        for(int i=0;i+(1&lt;&lt;j)-1&lt;n;i++) &#123;</div><div class="line">            dp[i][j] = min(dp[i][j-1],dp[i+(1&lt;&lt;(j-1))][j-1]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    T que(int L, int R) &#123;	//下标从零开始 </div><div class="line">    	int k=0;</div><div class="line">    	while((1&lt;&lt;(k+1))&lt;=R-L+1) k++;</div><div class="line">    	return min(dp[L][k],dp[R-(1&lt;&lt;k)+1][k]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+            <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">template&lt;typename T&gt;</div><div class="line">class RMQ &#123;</div><div class="line"> public:</div><div class="line"> 	vector&lt;vector&lt;T&gt; &gt; dp; </div><div class="line">    RMQ() &#123;&#125;</div><div class="line">    RMQ(vector&lt;T&gt;&amp; a) &#123;</div><div class="line">    	int n = a.size();</div><div class="line">    	dp.resize(n);</div><div class="line">    	for(int i=0; i&lt;n; i++)	dp[i].resize(20);</div><div class="line">    	//for (auto&amp; i : dp) i.resize(20);</div><div class="line">    	for(int i=0; i&lt;n; i++) dp[i][0]=a[i];</div><div class="line">    	for(int j=1; (1&lt;&lt;j)&lt;=n; j++)</div><div class="line">        for(int i=0;i+(1&lt;&lt;j)-1&lt;n;i++) &#123;</div><div class="line">            dp[i][j] = min(dp[i][j-1],dp[i+(1&lt;&lt;(j-1))][j-1]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    T que(int L, int R) &#123;	//下标从零开始 </div><div class="line">    	if(L&gt;R)	return 0;</div><div class="line">    	int k=0;</div><div class="line">    	while((1&lt;&lt;(k+1))&lt;=R-L+1) k++;</div><div class="line">    	return min(dp[L][k],dp[R-(1&lt;&lt;k)+1][k]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </code></pre>
           
         
@@ -1146,16 +1299,14 @@
 
       
         
-          
-            <p>尺取法：顾名思义，像尺子一样取一段，借用挑战书上面的话说，尺取法通常是对数组保存一对下标，即所选取的区间的左右端点，然后根据实际情况不断地推进区间左右端点以得出答案。之所以需要掌握这个技巧，是因为尺取法比直接暴力枚举区间效率高很多，尤其是数据量大的<br>时候，所以尺取法是一种高效的枚举区间的方法，一般用于求取有一定限制的区间个数或最短的区间等等。当然任何技巧都存在其不足的地方，有些情况下尺取法不可行，无法得出正确答案。</p>
-<p>使用尺取法时应清楚以下四点：<br>1、  什么情况下能使用尺取法?  2、何时推进区间的端点？ 3、如何推进区间的端点？ 3、何时结束区间的枚举？</p>
-<p>尺取法通常适用于选取区间有一定规律，或者说所选取的区间有一定的变化趋势的情况，通俗地说，在对所选取区间进行判断之后，我们可以明确如何进一步有方向地推进区间端点以求解满足条件的区间，如果已经判断了目前所选取的区间，但却无法确定所要求解的区间如何进一步<br>得到根据其端点得到，那么尺取法便是不可行的。首先，明确题目所需要求解的量之后，区间左右端点一般从最整个数组的起点开始，之后判断区间是否符合条件在根据实际情况变化区间的端点求解答案。<br>题目一：<a href="http://poj.org/problem?id=3061" target="_blank" rel="external">http://poj.org/problem?id=3061</a><br>题意：给定一个序列，找出最短的子序列长度，使得其和大于或等于S。</p>
-<p>分析：首先，序列都是正数，如果一个区间其和大于等于S了，那么不需要在向后推进右端点了，因为其和也肯定大于等于S但长度更长，所以，当区间和小于S时右端点向右移动，和大于等于S时，左端点向右移动以进一步找到最短的区间，如果右端点移动到区间末尾其和还不大于等于S，<br>结束区间的枚举。<br>这个题目区间和明显是有趋势的：单调变化，所以根据题目要求很容易求解，但是在使用之间需要对区间前缀和进行预处理计算。<br>代码：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">const int inf = 0x3f3f3f3f;</div><div class="line">int a[100010];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int T;</div><div class="line">	cin &gt;&gt; T;</div><div class="line">	while(T--)&#123;</div><div class="line">		int n, s;</div><div class="line">		cin &gt;&gt; n &gt;&gt; s;</div><div class="line">		for(int i = 0; i&lt;n; i++)	cin &gt;&gt; a[i];</div><div class="line">		int start = 0 , end = 0;</div><div class="line">		int ans = inf, sum = 0;</div><div class="line">		while(1)&#123;</div><div class="line">			while(end&lt;n &amp;&amp; sum &lt; s)	sum += a[end++];</div><div class="line">			if(sum &lt; s)	break;</div><div class="line">			ans = min(ans, end - start);</div><div class="line">			sum -= a[start++];</div><div class="line">		&#125;</div><div class="line">		if( ans == inf )	ans = 0;</div><div class="line">		cout&lt;&lt; ans &lt;&lt;&apos;\n&apos;;</div><div class="line">	&#125; </div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><p>题目二：<a href="http://poj.org/problem?id=3320" target="_blank" rel="external">http://poj.org/problem?id=3320</a><br>题目大意：一本书有P页，每一页都一个知识点，求去最少的连续页数覆盖所有的知识点。<br>分析：和上面的题一样的思路，如果一个区间的子区间满足条件，那么在区间推进到该处时，右端点会固定，左端点会向右移动到其子区间，且其子区间会是更短的，只是需要存储所选取的区间的知识点的数量，那么使用map进行映射以快速判断是否所选取的页数是否覆盖了所有的知识点。</p>
-<p>代码：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;set&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">const int inf = 0x3f3f3f3f;</div><div class="line">int a[1000010];</div><div class="line">set&lt;int&gt; st;</div><div class="line">map&lt;int,int&gt; mp;</div><div class="line">	</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int n;</div><div class="line">	scanf(&quot;%d&quot;,&amp;n);</div><div class="line">	for(int i = 0; i&lt;n; i++)	scanf(&quot;%d&quot;,a+i), st.insert(a[i]);</div><div class="line">	int ss = st.size();</div><div class="line">	int start = 0 , end = 0;</div><div class="line">	int ans = inf, sum = 0;</div><div class="line">	while(1)&#123;</div><div class="line">		while(end &lt; n &amp;&amp; sum &lt; ss )&#123;</div><div class="line">			if(mp[a[end]]==0)	sum++;</div><div class="line">			mp[a[end]]++;</div><div class="line">			end++; </div><div class="line">		&#125;</div><div class="line">		if(sum &lt; ss)	break;</div><div class="line">		ans = min(ans, end -start);</div><div class="line">		mp[a[start]]--;</div><div class="line">		if(mp[a[start]] == 0)	sum--;</div><div class="line">		start++;	</div><div class="line">	&#125;</div><div class="line">	printf(&quot;%d\n&quot;,ans);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          <p>尺取法：顾名思义，像尺子一样取一段，借用挑战书上面的话说，尺取法通常是对数组保存一对下标，即所选取的区间的左右端点，然后根据实际情况不断地推进区间左右端点以得出答案。之所以需要掌握这个技巧，是因为尺取法比直接暴力枚举区间效率高很多，尤其是数据量大的<br>时候，所以尺取法是一种高效的枚举区间的方法，一般用于求取有一定限制的区间个数或最短的区间等等。当然任何技巧都存在其不足的地方，有些情况下尺取法不可行，无法得出正确答案。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/06/尺取法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1651,158 +1802,6 @@ answer=(x1+1)∗(x2+1)∗...−1
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/模板/矩阵快速幂/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Webwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Webwei  blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/25/模板/矩阵快速幂/" itemprop="url">
-                  矩阵快速幂
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T10:12:43+08:00">
-                2017-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm模板/" itemprop="url" rel="index">
-                    <span itemprop="name">acm模板</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/25/模板/矩阵快速幂/" class="leancloud_visitors" data-flag-title="矩阵快速幂">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>矩阵快速幂：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ll PowerMod(ll a,ll b)  </div><div class="line">&#123;  </div><div class="line">    int ans=1;  </div><div class="line">    a=a%mod;  </div><div class="line">    while(b&gt;0)  </div><div class="line">    &#123;  </div><div class="line">        if(b%2==1)  ans=(ans*a)%mod;  </div><div class="line">        b=b/2;  </div><div class="line">        a=(a*a)%mod;  </div><div class="line">    &#125;  </div><div class="line">    return ans;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1852,7 +1851,7 @@ answer=(x1+1)∗(x2+1)∗...−1
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

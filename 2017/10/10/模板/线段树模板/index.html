@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数论," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="对正整数n，欧拉函数是小于n的正整数中与n互质的数的数目（φ(1)=1）欧拉函数打表：    1234567891011121314151617const int maxn=5e6+10;long long phi[maxn];void phi_table()&amp;#123;	memset(phi,0,sizeof(phi));	phi[1]=1;	for(int i=2; i &amp;lt;= maxn">
-<meta name="keywords" content="数论">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欧拉函数模板">
-<meta property="og:url" content="http://yoursite.com/2017/08/08/模板/欧拉函数模板/index.html">
+<meta property="og:title" content="线段树（区间求和，区间修改，最值查询）">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/模板/线段树模板/index.html">
 <meta property="og:site_name" content="Webwei  blog">
-<meta property="og:description" content="对正整数n，欧拉函数是小于n的正整数中与n互质的数的数目（φ(1)=1）欧拉函数打表：    1234567891011121314151617const int maxn=5e6+10;long long phi[maxn];void phi_table()&amp;#123;	memset(phi,0,sizeof(phi));	phi[1]=1;	for(int i=2; i &amp;lt;= maxn">
-<meta property="og:updated_time" content="2017-08-08T14:18:27.393Z">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
+<meta property="og:updated_time" content="2017-10-10T12:57:55.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欧拉函数模板">
-<meta name="twitter:description" content="对正整数n，欧拉函数是小于n的正整数中与n互质的数的数目（φ(1)=1）欧拉函数打表：    1234567891011121314151617const int maxn=5e6+10;long long phi[maxn];void phi_table()&amp;#123;	memset(phi,0,sizeof(phi));	phi[1]=1;	for(int i=2; i &amp;lt;= maxn">
+<meta name="twitter:title" content="线段树（区间求和，区间修改，最值查询）">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/08/模板/欧拉函数模板/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/10/模板/线段树模板/"/>
 
 
 
 
 
-  <title>欧拉函数模板 | Webwei  blog</title>
+  <title>线段树（区间求和，区间修改，最值查询） | Webwei  blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/模板/欧拉函数模板/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/模板/线段树模板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Webwei">
@@ -294,7 +294,7 @@
             
             
               
-                欧拉函数模板
+                线段树（区间求和，区间修改，最值查询）
               
             
           </h1>
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T22:16:43+08:00">
-                2017-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T20:54:13+08:00">
+                2017-10-10
               </time>
             
 
@@ -349,7 +349,7 @@
 
           
           
-             <span id="/2017/08/08/模板/欧拉函数模板/" class="leancloud_visitors" data-flag-title="欧拉函数模板">
+             <span id="/2017/10/10/模板/线段树模板/" class="leancloud_visitors" data-flag-title="线段树（区间求和，区间修改，最值查询）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,8 +377,9 @@
       
 
       
-        <p>对正整数n，欧拉函数是小于n的正整数中与n互质的数的数目（φ(1)=1）<br>欧拉函数打表：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">const int maxn=5e6+10;</div><div class="line">long long phi[maxn];</div><div class="line"></div><div class="line">void phi_table()</div><div class="line">&#123;</div><div class="line">	memset(phi,0,sizeof(phi));</div><div class="line">	phi[1]=1;</div><div class="line">	for(int i=2; i &lt;= maxn ; i++)&#123;</div><div class="line">		if(!phi[i])&#123;</div><div class="line">			for(int j=i;j&lt;maxn;j+=i)&#123;</div><div class="line">				if(!phi[j])	phi[j]=j;</div><div class="line">				phi[j]=phi[j]/i*(i-1);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	phi[0]=0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        <a id="more"></a>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define ll long long </div><div class="line">using namespace std;</div><div class="line"></div><div class="line">const int inf = 0x3f3f3f3f;</div><div class="line">const int maxn = 1e5 +10;</div><div class="line">int n, a[maxn], q;</div><div class="line"> </div><div class="line">struct node&#123;</div><div class="line">	int l,r;</div><div class="line">	ll sum,lazy;</div><div class="line">	ll mi, mx;</div><div class="line">	void update(ll x)&#123;</div><div class="line">		lazy += x;</div><div class="line">		sum += 1LL*(r-l+1)*x;</div><div class="line">		mi += x;</div><div class="line">		mx += x; </div><div class="line">	&#125;</div><div class="line">&#125;tree[maxn*4];</div><div class="line"></div><div class="line">void push_up(int x)&#123;</div><div class="line">	tree[x].sum = tree[x&lt;&lt;1].sum + tree[x&lt;&lt;1|1].sum;</div><div class="line">	tree[x].mi = min(tree[x&lt;&lt;1].mi,tree[x&lt;&lt;1|1].mi);</div><div class="line">	tree[x].mx = max(tree[x&lt;&lt;1].mx,tree[x&lt;&lt;1|1].mx);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void push_down(int x)&#123;</div><div class="line">	int lazyval = tree[x].lazy;</div><div class="line">	if(lazyval)&#123;</div><div class="line">		tree[x&lt;&lt;1].update(lazyval);</div><div class="line">		tree[x&lt;&lt;1|1].update(lazyval);</div><div class="line">		tree[x].lazy = 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void build(int x,int l,int r)&#123;	//x is root </div><div class="line">	tree[x].l = l, tree[x].r = r;</div><div class="line">	tree[x].sum = tree[x].lazy = 0;</div><div class="line">	tree[x].mi = inf; tree[x].mx = -inf;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tree[x].sum = a[l];</div><div class="line">		tree[x].mi = a[l];</div><div class="line">		tree[x].mx = a[l];</div><div class="line">	&#125;else &#123;</div><div class="line">		int mid = (l+r)/2;</div><div class="line">		build(x&lt;&lt;1,l,mid);</div><div class="line">		build(x&lt;&lt;1|1,mid+1,r);</div><div class="line">		push_up(x); </div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void update(int x,int l,int r,ll val)&#123;	//x is root </div><div class="line">	int L = tree[x].l, R = tree[x].r;</div><div class="line">	if(l&lt;=L &amp;&amp; R &lt;=r)&#123;</div><div class="line">		tree[x].update(val);</div><div class="line">	&#125;else&#123;</div><div class="line">		push_down(x);</div><div class="line">		int mid =(L+R)/2;</div><div class="line">		if(mid&gt;=l) update(x&lt;&lt;1,l,r,val);</div><div class="line">		if(r&gt;mid)	update(x&lt;&lt;1|1,l,r,val);</div><div class="line">		push_up(x);	</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">void query(int x,int l,int r, ll &amp;qsum, ll &amp;qmin, ll &amp;qmax)&#123;  //x is root </div><div class="line">	 int L = tree[x].l, R = tree[x].r;</div><div class="line">	if(l&lt;=L &amp;&amp; R &lt;=r)&#123;</div><div class="line">		//return tree[x].sum;</div><div class="line">		qsum = tree[x].sum;</div><div class="line">		qmin = tree[x].mi;</div><div class="line">		qmax = tree[x].mx;</div><div class="line">	&#125;else&#123;</div><div class="line">		push_down(x);</div><div class="line">		//ll ans = 0;</div><div class="line">		ll qlsum = 0, qrsum = 0;</div><div class="line">		ll qlmin = inf, qrmin = inf;</div><div class="line">		ll qlmax = -inf,qrmax = -inf;</div><div class="line">		int mid =(L+R)/2;</div><div class="line">		if(mid&gt;=l) query(x&lt;&lt;1,l,r,qlsum,qlmin,qlmax);</div><div class="line">		if(r&gt;mid)	query(x&lt;&lt;1|1,l,r,qrsum,qrmin,qrmax);</div><div class="line">		push_up(x);	</div><div class="line">		qsum += qlsum+qrsum;</div><div class="line">		qmin = min(qlmin,qrmin);</div><div class="line">		qmax = max(qlmax,qrmax);</div><div class="line">		//return ans;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	scanf(&quot;%d&quot;,&amp;n);</div><div class="line">	for(int i=1; i&lt;=n; i++)		scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">	build(1,1,n);</div><div class="line">	scanf(&quot;%d&quot;,&amp;q);</div><div class="line">	for(int i=1; i&lt;=q; i++)&#123;</div><div class="line">		int l, r, val;</div><div class="line">		scanf(&quot;%d%d%d&quot;,&amp;l,&amp;r,&amp;val);</div><div class="line">		update(1,l,r,val); </div><div class="line">		ll ans_sum = 0, ans_min = 0, ans_max = 0;</div><div class="line">		query(1,l,r,ans_sum,ans_min,ans_max);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_sum);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_min);</div><div class="line">		printf(&quot;%lld\n&quot;, ans_max);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
 
@@ -428,7 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数论/" rel="tag"># 数论</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -440,18 +441,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/21/模板/lightoj数论专题/" rel="next" title="lightoj 数论专题">
-                <i class="fa fa-chevron-left"></i> lightoj 数论专题
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/07/模板/大区间素数筛选/" rel="prev" title="大区间素数筛选">
-                大区间素数筛选 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/11/模板/RMQ模板/" rel="prev" title="RMQ（区间最值查询，可以查询__gcd）">
+                RMQ（区间最值查询，可以查询__gcd） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
